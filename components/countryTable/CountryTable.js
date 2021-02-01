@@ -14,7 +14,12 @@ export default function CountryTable({ tableData }) {
       </div>
       {tableData &&
         tableData.map((country) => (
-          <Link href={`/country/${country.country}`} key={country.country}>
+          <Link
+            href={`/country/${country.country
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")}`}
+            key={country.country}
+          >
             <div className={styles.country__row}>
               <div className={styles.country__name}> {country.country} </div>
               <div className={styles.country__cases}>
@@ -34,9 +39,7 @@ export default function CountryTable({ tableData }) {
                 {" "}
                 {country.deaths.toLocaleString()}{" "}
               </div>
-              <div
-                className={styles.country__active}
-              >
+              <div className={styles.country__active}>
                 {" "}
                 <div
                   className={`${styles.country__active}  ${

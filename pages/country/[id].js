@@ -82,26 +82,7 @@ const Country = ({ country }) => {
 export default Country;
 
 
-//  "cases": 2121,
-//   "todayCases": 0,
-//   "deaths": 615,
-//   "todayDeaths": 0,
-//   "recovered": 1426,
-//   "todayRecovered": 0,
-//   "active": 80,
-//   "critical": 23,
-//   "casesPerOneMillion": 70,
-//   "deathsPerOneMillion": 20,
-//   "tests": 17404,
-//   "testsPerOneMillion": 576,
-//   "population": 30207109,
-//   "continent": "Asia",
-//   "oneCasePerPeople": 14242,
-//   "oneDeathPerPeople": 49117,
-//   "oneTestPerPeople": 1736,
-//   "activePerOneMillion": 2.65,
-//   "recoveredPerOneMillion": 47.21,
-//   "criticalPerOneMillion": 0.76
+
 export const getCountry = async (id) => {
   const res = await fetch(`https://disease.sh/v3/covid-19/countries/${id}`);
   const country = await res.json();
@@ -114,7 +95,9 @@ export const getStaticPaths = async () => {
   const countries = await res.json();
 
   const paths = countries.map((country) => ({
-    params: { id: country.country },
+    params: {
+      id: country.country.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
+    },
   }));
 
   return {
