@@ -1,0 +1,23 @@
+.input__container {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color-light);
+    border-radius: 8px;
+    color: var(--text-color-secondary);
+    margin-bottom: 15px;
+    padding-right: 20px;
+}
+
+.input__feild {
+    padding: 12px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline:  none;
+    height: 100%;
+    direction: rtl;
+}
+
+.input__feild::placeholder {
+    color: var(--text-color);
+}

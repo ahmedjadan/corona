@@ -1,0 +1,72 @@
+.card {
+  padding: 20px;
+  background-color: var(--background-color-light);
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  font-size: 1.4em;
+}
+.card__title {
+  color: var(--text-color-secondary);
+  font-weight: 600;
+  margin: 16px 0;
+}
+.card__cases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.card__deaths {
+  color: #fa6400;
+}
+.card__value {
+  font-weight: 700;
+  margin: 10px 0;
+}
+.card__cases {
+  color: #f9345e;
+}
+.card__recovered {
+  color: #1cb142;
+}
+.card__active {
+  color: var(--primary-color);
+}
+.arrow_up {
+  color: #0a4b02;
+  font-weight: 700;
+}
+.card__new_value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+.card__ctitical {
+  display: flex;
+  justify-content: center;
+  margin: 0 6px;
+  padding: 0;
+}
+.critical__value {
+  display: flex;
+  align-items: center;
+  background-color: #ffe54fb4;
+  padding: 0 7px;
+  border-radius: 10px;
+  color: rgb(75, 72, 72);
+  margin: 0 6px;
+  font-family: "Poppins", sans-serif;
+}
+@media screen and (min-width: 720px) {
+  .cards__coontainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .card {
+    padding: 20px 40px;
+  }
+}

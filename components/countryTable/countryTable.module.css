@@ -1,0 +1,102 @@
+.country__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  padding: 15px;
+  font-weight: 500;
+  background-color: var(--background-color-light);
+  margin-bottom: 3px;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.table__head {
+  display: flex;
+}
+.table__head button {
+  border: none;
+  background: var(--background-color-dark);
+  outline: none;
+  cursor: pointer;
+}
+.head__active,
+.head__cases,
+.head__deaths,
+.head__name,
+.head__new,
+.head__recovered {
+  padding: 20px;
+  font-weight: 700;
+  display: flex;
+  color: var(--text-color-secondary);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.head__name {
+  flex: 1;
+}
+.head__cases {
+  flex: 1;
+}
+.head__new {
+  flex: 1;
+}
+.head__deaths {
+  flex: 1;
+}
+.head__active {
+  flex: 1;
+}
+.head__recovered {
+  flex: 1;
+}
+.country__name {
+  flex: 1;
+  text-align: left;
+}
+.country__cases {
+  flex: 1;
+}
+.country__deaths {
+  flex: 1;
+}
+.country__active {
+  flex: 1;
+}
+.country__recovered {
+  flex: 1;
+}
+.country__new {
+  flex: 1;
+}
+@media screen and (max-width: 720px) {
+  .country__new,
+  .country__recovered,
+  .country__active,
+  .head__recovered,
+  .head__active,
+  .head__new {
+    display: none;
+  }
+}
+.new__cases {
+  background-color:var(--new-cases);
+  width: fit-content;
+  padding: 0 15px;
+  border-radius: 7px;
+  margin: 0 auto;
+  text-align: center;
+}
+.new__deaths {
+   background-color: var(--new-deaths);
+  width: fit-content;
+  padding: 0 15px;
+  border-radius: 7px;
+  margin: 0 auto;
+  text-align: center;
+}
