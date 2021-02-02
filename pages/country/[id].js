@@ -113,5 +113,6 @@ export const getStaticProps = async ({ params }) => {
     props: {
       country,
     },
+    revalidate: 1,
   };
 };
