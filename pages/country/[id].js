@@ -120,7 +120,7 @@ export const getStaticPaths = async () => {
 
   const paths = countries.map((country) => ({
     params: {
-      id: country.country,
+      id: country.country.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
     },
   }));
 
