@@ -43,7 +43,7 @@ export default function CountryTable({ tableData }) {
                 {" "}
                 <div
                   className={`${styles.country__active}  ${
-                    country.todayCases ? styles.new__deaths : ""
+                    country.todayDeaths ? styles.new__deaths : ""
                   } `}
                 >
                   {country.todayDeaths.toLocaleString()}{" "}
