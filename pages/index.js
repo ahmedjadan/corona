@@ -29,11 +29,10 @@ export default function Home({ HomeData, tableData }) {
   }, [scrollToTop]);
   return (
     <Layout cardsdata={HomeData}>
-
       <div className={styles.updated}>
-          {new Date(HomeData.updated).toLocaleTimeString("en-US")}: آخر تحديث
-          للبيانات
-        </div>
+        {new Date(HomeData.updated).toLocaleTimeString("en-US")}: آخر تحديث
+        للبيانات
+      </div>
       <div className={styles.cards}>
         <MainCards mainData={HomeData} />
       </div>
@@ -67,5 +66,6 @@ export const getStaticProps = async () => {
       HomeData,
       tableData,
     },
+    revalidate: 1,
   };
 };
