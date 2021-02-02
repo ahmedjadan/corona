@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./countryTable.module.css";
 
 export default function CountryTable({ tableData }) {
+  const orderedCountry = tableData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
   return (
     <div>
       <div className={styles.table__head}>
@@ -12,13 +13,12 @@ export default function CountryTable({ tableData }) {
         <button className={styles.head__active}>وفيات جديدة</button>
         <button className={styles.head__recovered}>تعافي</button>
       </div>
-      {tableData &&
-        tableData.map((country) => (
+      {orderedCountry &&
+        orderedCountry.map((country) => (
           <Link
             href={`/country/${country.country
               .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, "")
-              }`}
+              .replace(/[\u0300-\u036f]/g, "")}`}
             key={country.country}
           >
             <div className={styles.country__row}>
