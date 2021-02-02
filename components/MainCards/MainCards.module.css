@@ -26,7 +26,7 @@
   margin: 10px 0;
 }
 .card__cases {
-  color: #f9345e;
+  color: #f93434;
 }
 .card__recovered {
   color: #1cb142;
@@ -35,8 +35,7 @@
   color: var(--primary-color);
 }
 .arrow_up {
-  color: #0a4b02;
-  font-weight: 700;
+  color: #158606;
 }
 .card__new_value {
   display: flex;

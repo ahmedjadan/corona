@@ -17,7 +17,8 @@ export default function CountryTable({ tableData }) {
           <Link
             href={`/country/${country.country
               .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, "")}`}
+              .replace(/[\u0300-\u036f]/g, "")
+              }`}
             key={country.country}
           >
             <div className={styles.country__row}>

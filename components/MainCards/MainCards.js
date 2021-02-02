@@ -20,7 +20,7 @@ export default function MainCards({ mainData }) {
           {cases && cases.toLocaleString()}
         </div>
         <div className={styles.card__new_value}>
-          <AddIcon className={styles.arrow_up} fontSize="small" />
+          <AddIcon className={styles.arrow_up}  />
           {Math.abs(todayCases) > 999
             ? Math.sign(todayCases) * (Math.abs(todayCases) / 1000).toFixed(1) +
               "k"
@@ -33,7 +33,7 @@ export default function MainCards({ mainData }) {
           {deaths.toLocaleString()}
         </div>
         <div className={styles.card__new_value}>
-          <AddIcon className={styles.arrow_up} fontSize="small" />
+          <AddIcon className={styles.arrow_up} />
           {Math.abs(todayDeaths) > 999
             ? Math.sign(todayDeaths) *
                 (Math.abs(todayDeaths) / 1000).toFixed(1) +
@@ -47,7 +47,7 @@ export default function MainCards({ mainData }) {
           {recovered.toLocaleString()}
         </div>
         <div className={styles.card__new_value}>
-          <AddIcon className={styles.arrow_up} fontSize="larg" />
+          <AddIcon className={styles.arrow_up}  />
           {Math.abs(todayRecovered) > 999 ? Math.sign(todayRecovered)*(Math.abs(todayRecovered) / 1000).toFixed(1) +
               "k"
             : Math.sign(todayRecovered) * Math.abs(todayRecovered)}

@@ -6,7 +6,7 @@ export default function SearchInput({...rest}) {
     return (
       <div className={styles.input__container}>
         <input className={styles.input__feild} {...rest} />
-        <SearchRounded />
+        <SearchRounded className={styles.search__icon} fontSize="small"/>
       </div>
     );
 }

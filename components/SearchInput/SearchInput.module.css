@@ -16,8 +16,9 @@
     outline:  none;
     height: 100%;
     direction: rtl;
+    font-size: 16px;
 }
-
+ 
 .input__feild::placeholder {
     color: var(--text-color);
 }
