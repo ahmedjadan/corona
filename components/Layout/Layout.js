@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./Layout.module.css";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 
-function Layout({ children, cardsdata }) {
+function Layout({ children, title="منصة كورونا بالعربي" }) {
   const [theme, setTheme] = useState("light");
   const switchTheme = () => {
     if(theme === 'light'){
@@ -19,12 +19,16 @@ function Layout({ children, cardsdata }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>كوفيد19</title>
+        <title> {title} </title>
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <header className={styles.header}>
         <Link href="/">
-        <div className={styles.title}> منصة كورونا بالعربي | كوفيد -19</div>
+          <div className={styles.title}>
+            {" "}
+            <img src="/virus.svg" alt="logo" width="60" height="100" />
+            منصة كوفيــد-19 بالعربي
+          </div>
         </Link>
         <button
           aria-label="change color theme"

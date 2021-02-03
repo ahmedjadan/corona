@@ -1,10 +1,18 @@
 import Layout from "../../components/Layout/Layout";
+import Head from "next/head";
 import Link from "next/link";
 import styles from "./country.module.css";
 
 const Country = ({ country }) => {
   return (
-    <Layout>
+    <Layout title={`منصة كورونا بالعربي | ${country.country}`}>
+      <Head>
+        <meta
+          property="og:description"
+          content={` ${country.country} آخر احصائيات حالات فيروس كورونا في  `}
+        />
+        <meta property="og:image" content={country.countryInfo.flag} />
+      </Head>
       <Link href="/">Home</Link>
       <div className={styles.container}>
         <div className={styles.container__left}>
