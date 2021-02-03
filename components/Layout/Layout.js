@@ -20,7 +20,7 @@ function Layout({ children, title="منصة كورونا بالعربي" }) {
     <div className={styles.container}>
       <Head>
         <title> {title} </title>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
         <Link href="/">
