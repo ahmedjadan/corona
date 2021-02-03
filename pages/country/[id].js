@@ -19,92 +19,92 @@ const Country = ({ country }) => {
           <img src={country.countryInfo.flag} alt="" width="200" height="200" />
           <div className={styles.left__wrapper}>
             <div className={styles.name__lable}>
-              <div> {country.country} </div>
               <div>اسم الدولة</div>
+              <div> {country.country} </div>
             </div>
             <div className={styles.name__cases}>
-              <div> {country.cases.toLocaleString()} </div>
               <div> عدد الحالات</div>
+              <div> {country.cases.toLocaleString()} </div>
             </div>
             <div className={styles.name__pop}>
-              <div> {country.population.toLocaleString()} </div>
               <div> عدد السكان</div>
+              <div> {country.population.toLocaleString()} </div>
             </div>
             <div className={styles.name__region}>
-              <div> {country.continent} </div>
               <div> القارة/ الاقليم</div>
+              <div> {country.continent} </div>
             </div>
           </div>
         </div>
         <div className={styles.container__right}>
           <div className={styles.right__detailes}>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}>حالات جديدة</div>
               <div className={styles.detailes_value}>
                 {country.todayCases.toLocaleString()}
               </div>
-              <div className={styles.detailes_lable}>حالات جديدة</div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}>وفيات</div>
               <div className={styles.detailes_value}>
                 {country.deaths.toLocaleString()}
               </div>
-              <div className={styles.detailes_lable}>وفيات</div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}>وفيات جديدة</div>
               <div className={styles.detailes_value}>
                 {country.todayDeaths.toLocaleString()}
               </div>
-              <div className={styles.detailes_lable}>وفيات جديدة</div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}> حالات نشطة </div>
               <div className={styles.detailes_value}>
                 {country.active.toLocaleString()}
               </div>
-              <div className={styles.detailes_lable}> حالات نشطة </div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}> حالات حرجة </div>
               <div className={styles.detailes_value}>
                 {country.critical.toLocaleString()}
               </div>
-              <div className={styles.detailes_lable}> حالات حرجة </div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}> تعافي</div>
               <div className={styles.detailes_value}>
                 {country.recovered.toLocaleString()}
               </div>
-              <div className={styles.detailes_lable}> تعافي</div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}> تعافي جديد</div>
               <div className={styles.detailes_value}>
                 {country.todayRecovered}
               </div>
-              <div className={styles.detailes_lable}> تعافي جديد</div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}> حالة لكل 1 مليون </div>
               <div className={styles.detailes_value}>
                 {country.casesPerOneMillion}
               </div>
-              <div className={styles.detailes_lable}> حالة لكل 1 مليون </div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}> وفاة بين كل 1 مليون </div>
               <div className={styles.detailes_value}>
                 {country.deathsPerOneMillion}
               </div>
-              <div className={styles.detailes_lable}> وفاة بين كل 1 مليون </div>
             </div>
             <div className={styles.detailes_row}>
+              <div className={styles.detailes_lable}> فحوصات </div>
               <div className={styles.detailes_value}>
                 {country.tests.toLocaleString()}
               </div>
-              <div className={styles.detailes_lable}> فحوصات </div>
             </div>
             <div className={styles.detailes_row}>
-              <div className={styles.detailes_value}>
-                {country.testsPerOneMillion.toLocaleString()}
-              </div>
               <div className={styles.detailes_lable}>
                 {" "}
                 حالة تم فحصها بين كل 1 مليون{" "}
+              </div>
+              <div className={styles.detailes_value}>
+                {country.testsPerOneMillion.toLocaleString()}
               </div>
             </div>
           </div>

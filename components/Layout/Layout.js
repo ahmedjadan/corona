@@ -42,8 +42,8 @@ function Layout({ children, title = "منصة كورونا بالعربي" }) {
         <Link href="/">
           <div className={styles.title}>
             {" "}
-            <img src="/virus.svg" alt="logo" width="60" height="100" />
             منصة كوفيــد-19 بالعربي
+            <img src="/virus.svg" alt="logo" width="60" height="100" />
           </div>
         </Link>
         <button

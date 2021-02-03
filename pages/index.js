@@ -30,8 +30,8 @@ export default function Home({ HomeData, tableData }) {
   return (
     <Layout cardsdata={HomeData}>
       <div className={styles.updated}>
-        {new Date(HomeData.updated).toLocaleTimeString("en-US")}: آخر تحديث
-        للبيانات
+        آخر تحديث للبيانات :{" "}
+        {new Date(HomeData.updated).toLocaleTimeString("en-US")}
       </div>
       <div className={styles.cards}>
         <MainCards mainData={HomeData} />

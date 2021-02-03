@@ -10,6 +10,7 @@
   background-color: var(--background-color-light);
   margin-bottom: 3px;
   border-radius: 8px;
+  
 
   cursor: pointer;
 }
@@ -51,8 +52,11 @@
   margin: 0 10px;
   flex: 1;
 }
+.head__name {
+  justify-content: flex-start;
+}
 .country__name {
-  text-align: left;
+  text-align: right;
 }
 @media screen and (max-width: 720px) {
   .country__new,
