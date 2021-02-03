@@ -39,52 +39,28 @@
   margin-bottom: 5px;
   margin-left: 0;
   margin-right: 0;
-}
-.head__name {
   flex: 1;
 }
-.head__cases {
-  flex: 1;
-}
-.head__new {
-  flex: 1;
-}
-.head__deaths {
-  flex: 1;
-}
-.head__active {
-  flex: 1;
-}
-.head__recovered {
+
+.country__active,
+.country__cases,
+.country__deaths,
+.country__name,
+.country__new,
+.country__recovered {
+  margin: 0 10px;
   flex: 1;
 }
 .country__name {
-  flex: 1;
   text-align: left;
-}
-.country__cases {
-  flex: 1;
-}
-.country__deaths {
-  flex: 1;
-}
-.country__active {
-  flex: 1;
-}
-.country__recovered {
-  flex: 1;
-}
-.country__new {
-  flex: 1;
 }
 @media screen and (max-width: 720px) {
   .country__new,
-  .country__recovered,
   .country__active,
-  .head__recovered,
   .head__active,
   .head__new {
     display: none;
+    font-size: 14px;
   }
 }
 .new__cases {

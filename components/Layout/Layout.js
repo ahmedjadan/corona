@@ -1,25 +1,41 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Layout.module.css";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 
-function Layout({ children, title="منصة كورونا بالعربي" }) {
+function Layout({ children, title = "منصة كورونا بالعربي" }) {
   const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    );
+
+    setTheme(localStorage.getItem("theme"));
+  }, []);
+
   const switchTheme = () => {
-    if(theme === 'light'){
-      document.documentElement.setAttribute('data-theme', 'dark')
-      setTheme('dark')
+    if (theme === "light") {
+      saveTheme("dark");
     } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      setTheme("light");
+      saveTheme("light");
     }
-  }
-  
+  };
+
+  const saveTheme = (theme) => {
+    setTheme(theme);
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+  };
+
+
   return (
     <div className={styles.container}>
       <Head>
         <title> {title} </title>
+        <meta property="og:title" content={title} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
