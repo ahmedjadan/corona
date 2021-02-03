@@ -27,12 +27,12 @@
   display: flex;
   align-items: center;
   position: absolute;
-  right: 140px;
+  left: 140px;
 }
 
 @media screen and (max-width: 770px) {
   .theme__swicher {
-    right: 2px;
+    left: 2px;
     position: relative;
   }
   .title {
@@ -46,7 +46,7 @@
 @media screen and (max-width: 280px) {
   .theme__swicher {
     position: relative;
-    right: 4px;
+    left: 4px;
   }
   .header {
     flex-direction: column;
