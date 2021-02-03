@@ -13,7 +13,6 @@ const Country = ({ country }) => {
         />
         <meta property="og:image" content={country.countryInfo.flag} />
       </Head>
-      <Link href="/">Home</Link>
       <div className={styles.container}>
         <div className={styles.container__left}>
           <img src={country.countryInfo.flag} alt="" width="200" height="200" />

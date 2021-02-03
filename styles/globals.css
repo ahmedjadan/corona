@@ -39,6 +39,7 @@ body {
   color: var(--text-color-secondary);
   font-size: 18px;
   scroll-behavior: smooth;
+  direction: rtl;
 }
 
 a {

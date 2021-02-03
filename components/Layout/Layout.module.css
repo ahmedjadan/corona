@@ -27,12 +27,12 @@
   display: flex;
   align-items: center;
   position: absolute;
-  left: 140px;
+  right: 140px;
 }
 
 @media screen and (max-width: 770px) {
   .theme__swicher {
-    left: 2px;
+    right: 2px;
     position: relative;
   }
   .title {
@@ -46,10 +46,16 @@
 @media screen and (max-width: 280px) {
   .theme__swicher {
     position: relative;
-    left: 4px;
+    right: 4px;
+    order: 2;
+
   }
   .header {
     flex-direction: column;
+    margin: 0 4px;
+  }
+  .title {
+    margin: 0 5px;
   }
 }
 .title {
