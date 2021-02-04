@@ -56,7 +56,15 @@ function Layout({ children, title = "منصة كورونا بالعربي" }) {
 
       <main className={styles.main}> {children} </main>
 
-      <footer className={styles.footer}> &copy; Ahmed Ja'dan </footer>
+      <footer className={styles.footer}>
+        <a
+          href="https://twitter.com/a7medjadan"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Ahmed Ja'dan &copy;
+        </a>{" "}
+      </footer>
     </div>
   );
 }

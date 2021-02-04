@@ -70,7 +70,11 @@ const Country = ({ country }) => {
             <div className={styles.detailes_row}>
               <div className={styles.detailes_lable}> حالات نشطة </div>
               <div className={styles.detailes_value}>
-                {country.active.toLocaleString()}
+                {Math.abs(country.active) > 999999
+                  ? Math.sign(country.active) *
+                      (Math.abs(country.active) / 1000000).toFixed(2) +
+                    "M"
+                  : country.active.toLocaleString()}
               </div>
             </div>
             <div className={styles.detailes_row}>
@@ -125,7 +129,9 @@ const Country = ({ country }) => {
               <div className={styles.detailes_value}>
                 {Math.abs(country.testsPerOneMillion) > 999999
                   ? Math.sign(country.testsPerOneMillion) *
-                      (Math.abs(country.testsPerOneMillion) / 1000000).toFixed(2) +
+                      (Math.abs(country.testsPerOneMillion) / 1000000).toFixed(
+                        2
+                      ) +
                     "M"
                   : country.testsPerOneMillion.toLocaleString()}
               </div>

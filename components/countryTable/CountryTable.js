@@ -63,7 +63,7 @@ export default function CountryTable({ tableData }) {
               <div className={styles.country__recovered}>
                 {Math.abs(country.recovered) > 999999
                   ? Math.sign(country.recovered) *
-                      (Math.abs(country.recovered) / 1000000).toFixed(3) +
+                      (Math.abs(country.recovered) / 1000000).toFixed(2) +
                     "M"
                   : country.recovered.toLocaleString()}
               </div>
