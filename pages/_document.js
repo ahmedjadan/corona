@@ -26,6 +26,10 @@ class MyDocument extends Document {
             content="تابع آخر احصاءات فيروس كرونا لحظة بلحظة"
           />
           <meta
+            name="google-site-verification"
+            content="ib58-3W8vdPzagl00oq0bEOp7vfn7Aq0BQTrBQxc47Y"
+          />
+          <meta
             property="og:description"
             content="تابع آخر احصاءات فيروس كرونا لحظة بلحظة"
           />
