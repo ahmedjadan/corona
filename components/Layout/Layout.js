@@ -30,7 +30,6 @@ function Layout({ children, title = "منصة كورونا بالعربي" }) {
     document.documentElement.setAttribute("data-theme", theme);
   };
 
-
   return (
     <div className={styles.container}>
       <Head>

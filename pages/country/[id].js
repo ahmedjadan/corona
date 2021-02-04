@@ -1,6 +1,5 @@
 import Layout from "../../components/Layout/Layout";
 import Head from "next/head";
-import Link from "next/link";
 import styles from "./country.module.css";
 
 const Country = ({ country }) => {
@@ -23,11 +22,24 @@ const Country = ({ country }) => {
             </div>
             <div className={styles.name__cases}>
               <div> عدد الحالات</div>
-              <div> {country.cases.toLocaleString()} </div>
+              <div>
+                {Math.abs(country.cases) > 999999
+                  ? Math.sign(country.cases) *
+                      (Math.abs(country.cases) / 1000000).toFixed(2) +
+                    "M"
+                  : country.cases.toLocaleString()}
+              </div>
             </div>
             <div className={styles.name__pop}>
               <div> عدد السكان</div>
-              <div> {country.population.toLocaleString()} </div>
+              <div>
+                {" "}
+                {Math.abs(country.population) > 999999
+                  ? Math.sign(country.population) *
+                      (Math.abs(country.population) / 1000000).toFixed(2) +
+                    "M"
+                  : country.population.toLocaleString()}
+              </div>
             </div>
             <div className={styles.name__region}>
               <div> القارة/ الاقليم</div>
@@ -70,7 +82,11 @@ const Country = ({ country }) => {
             <div className={styles.detailes_row}>
               <div className={styles.detailes_lable}> تعافي</div>
               <div className={styles.detailes_value}>
-                {country.recovered.toLocaleString()}
+                {Math.abs(country.recovered) > 999999
+                  ? Math.sign(country.recovered) *
+                      (Math.abs(country.recovered) / 1000000).toFixed(2) +
+                    "M"
+                  : country.recovered.toLocaleString()}
               </div>
             </div>
             <div className={styles.detailes_row}>
@@ -94,7 +110,11 @@ const Country = ({ country }) => {
             <div className={styles.detailes_row}>
               <div className={styles.detailes_lable}> فحوصات </div>
               <div className={styles.detailes_value}>
-                {country.tests.toLocaleString()}
+                {Math.abs(country.tests) > 999999
+                  ? Math.sign(country.tests) *
+                      (Math.abs(country.tests) / 1000000).toFixed(2) +
+                    "M"
+                  : country.tests.toLocaleString()}
               </div>
             </div>
             <div className={styles.detailes_row}>
@@ -103,7 +123,11 @@ const Country = ({ country }) => {
                 حالة تم فحصها بين كل 1 مليون{" "}
               </div>
               <div className={styles.detailes_value}>
-                {country.testsPerOneMillion.toLocaleString()}
+                {Math.abs(country.testsPerOneMillion) > 999999
+                  ? Math.sign(country.testsPerOneMillion) *
+                      (Math.abs(country.testsPerOneMillion) / 1000000).toFixed(2) +
+                    "M"
+                  : country.testsPerOneMillion.toLocaleString()}
               </div>
             </div>
           </div>

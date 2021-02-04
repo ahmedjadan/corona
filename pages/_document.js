@@ -14,14 +14,14 @@ class MyDocument extends Document {
             content="تابع آخر احصاءات فيروس كرونا لحظة بلحظة"
           />
           {/* <meta property="og:image" content="/metaimage.PNG" /> */}
-          <meta name="twitter:image" content="/metaimage.PNG" />
+          <meta name="twitter:image" content="/socialmediameta.png" />
           <meta name="twitter:title" content="منصة كورونا بالعربي" />
           <meta
             name="keywords"
             content="كورونا، كوفيد19، فيروس كورونا التاجي، حالات كورونا في العالم العربي ، حالات كورونا في اليمن، السعودية، مصر، الامارات، قطر، البحرين، الكويت، السودان، العراق، سوريا، فلسطين، المغرب العربي، موريتانيا، ليبيا"
           />
           <meta property="og:url" content="https://corona-ar.vercel.app" />
-          <meta property="og:image" content="/metaimage.PNG" />
+          <meta property="og:image" content="/public/socialmediameta.png" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="website" />
           <meta property="twitter:domain" content="corona-ar.vercel.app" />
