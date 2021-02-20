@@ -57,7 +57,7 @@ export default function Home({ HomeData, tableData }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch("https://disease.sh/v3/covid-19/all");
   const data = await fetch("https://disease.sh/v3/covid-19/countries");
   const HomeData = await res.json();
@@ -67,6 +67,6 @@ export const getStaticProps = async () => {
       HomeData,
       tableData,
     },
-    revalidate: 1,
+   
   };
 };
