@@ -40,6 +40,7 @@ export default function Home({ HomeData, tableData }) {
         <SearchInput
           placeholder="ابحث باسم الدولة ...."
           onChange={handleSearch}
+          type="text"
         />
       </div>
       <div

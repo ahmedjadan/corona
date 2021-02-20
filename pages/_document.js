@@ -33,6 +33,7 @@ class MyDocument extends Document {
             property="og:description"
             content="تابع آخر احصاءات فيروس كرونا لحظة بلحظة"
           />
+
           {/* <meta property="og:image" content="/metaimage.PNG" /> */}
           <meta name="twitter:image" content="/socialmediameta.png" />
           <meta name="twitter:title" content="منصة كورونا بالعربي" />

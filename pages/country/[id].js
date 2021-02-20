@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout/Layout";
 import Head from "next/head";
+import Image from "next/image";
+
 import styles from "./country.module.css";
 
 const Country = ({ country }) => {
@@ -10,14 +12,20 @@ const Country = ({ country }) => {
           property="og:description"
           content={` ${country.country} آخر احصائيات حالات فيروس كورونا في  `}
         />
-        <meta property="og:image" content={country.countryInfo.flag} />
+        <meta property="og:image" content={country.countryInfo.flag}  />
       </Head>
       <div className={styles.container}>
         <div className={styles.container__left}>
-          <img src={country.countryInfo.flag} alt="" width="200" height="200" />
-          <div className={styles.left__wrapper}>
-            <div className={styles.name__lable}>
-              <div>اسم الدولة</div>
+          <Image
+            src={country.countryInfo.flag}
+            alt={country.country}
+            layout="intrinsic"
+            width={900}
+            height={475}
+          />
+          <div  className={styles.left__wrapper}>
+               <div className={styles.name__lable}>
+                 <div>اسم الدولة</div>
               <div> {country.country} </div>
             </div>
             <div className={styles.name__cases}>
@@ -144,36 +152,47 @@ const Country = ({ country }) => {
 };
 export default Country;
 
-export const getCountry = async (id) => {
-  const res = await fetch(`https://disease.sh/v3/covid-19/countries/${id}`);
-  const country = await res.json();
+// export const getCountry = async (id) => {
+//   const res = await fetch(`https://disease.sh/v3/covid-19/countries/${id}`);
+//   const country = await res.json();
 
-  return country;
-};
+//   return country;
+// };
 
-export const getStaticPaths = async () => {
-  const res = await fetch("https://disease.sh/v3/covid-19/countries/");
-  const countries = await res.json();
+// export const getStaticPaths = async () => {
+//   const res = await fetch("https://disease.sh/v3/covid-19/countries/");
+//   const countries = await res.json();
 
-  const paths = countries.map((country) => ({
-    params: {
-      id: country.country.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
-    },
-  }));
+//   const paths = countries.map((country) => ({
+//     params: {
+//       id: country.country.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// };
 
-export const getStaticProps = async ({ params }) => {
-  const country = await getCountry(params.id);
+// export const getStaticProps = async ({ params }) => {
+//   const country = await getCountry(params.id);
+
+//   return {
+//     props: {
+//       country,
+//     },
+//     revalidate: 1,
+//   };
+// };
+
+export const getServerSideProps = async ({params}) => {
+  const res = await fetch(`https://disease.sh/v3/covid-19/countries/${params.id}`)
+  const country = await res.json()
 
   return {
     props: {
-      country,
-    },
-    revalidate: 1,
-  };
-};
+      country
+    }
+  }
+}

@@ -36,6 +36,7 @@ function Layout({ children, title = "منصة كورونا بالعربي" }) {
         <title> {title} </title>
         <meta property="og:title" content={title} />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header className={styles.header}>
         <button
@@ -53,9 +54,7 @@ function Layout({ children, title = "منصة كورونا بالعربي" }) {
           </div>
         </Link>
       </header>
-
       <main className={styles.main}> {children} </main>
-
       <footer className={styles.footer}>
         <a
           href="https://twitter.com/a7medjadan"
