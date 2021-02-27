@@ -16,6 +16,8 @@
 
 .table__head {
   display: flex;
+  position: sticky;
+  top: 0;
 }
 .table__head button {
   border: none;
