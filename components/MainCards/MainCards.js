@@ -1,5 +1,6 @@
 import styles from "./MainCards.module.css";
 import AddIcon from "@material-ui/icons/Add";
+import Skeleton from 'react-loading-skeleton';
 
 export default function MainCards({ mainData }) {
   const {
@@ -30,7 +31,8 @@ export default function MainCards({ mainData }) {
       <div className={styles.card}>
         <div className={styles.card__title}> وفيات مؤكدة </div>
         <div className={`${styles.card__value} ${styles.card__deaths}`}>
-          {deaths.toLocaleString()}
+          {!deaths ? <Skeleton duration={4} count={1} height={30}/> : deaths.toLocaleString()}
+          
         </div>
         <div className={styles.card__new_value}>
           <AddIcon className={styles.arrow_up} />
