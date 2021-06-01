@@ -1,4 +1,4 @@
-import Head from "../Head";
+import Head from '../Head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Layout.module.css';
@@ -35,7 +35,6 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
   }
   return (
     <div className={styles.container}>
-      <Head/>
       <header className={styles.header}>
         <button
           aria-label="change color theme"
@@ -45,7 +44,7 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
           <Brightness4Icon />
         </button>
         <Link href="/">
-          <a  onClick={refreshPage}>
+          <a onClick={refreshPage}>
             <div className={styles.title}>
               {' '}
               منصة كوفيــد-19 بالعربي

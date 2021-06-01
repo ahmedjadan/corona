@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout/Layout';
-import Head from 'next/head';
+import Head from '../../components/Head';
 import Image from 'next/image';
 import Skeleton from 'react-loading-skeleton';
 import styles from './country.module.css';
@@ -7,14 +7,12 @@ import styles from './country.module.css';
 const Country = ({ country }) => {
   if (!country) return <Skeleton height={200} />;
   return (
-    <Layout title={`منصة كورونا بالعربي | ${country.country}`}>
-      <Head>
-        <meta
-          property="og:description"
-          content={` ${country.country} آخر احصائيات حالات فيروس كورونا في  `}
-        />
-        <meta property="og:image" content={country.countryInfo.flag} />
-      </Head>
+    <Layout>
+      <Head
+        title={`منصة كورونا بالعربي | ${country.country}`}
+        image={`${country.countryInfo.flag}`}
+        description={` ${country.country} آخر احصائيات حالات فيروس كورونا في  `}
+      />
       <div className={styles.container}>
         <div className={styles.container__left}>
           {(

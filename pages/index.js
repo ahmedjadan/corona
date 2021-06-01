@@ -29,7 +29,7 @@ export default function Home({ HomeData, tableData }) {
   }, [scrollToTop]);
   return (
     <Layout cardsdata={HomeData}>
-      <Head/>
+      <Head image="https://corona-ar.vercel.app/socialmediameta.png" title="منصة كورونا بالعربي | تابع حالات فيروس كورونا لحظة بلحظة"/>
       <div className={styles.updated}>
         آخر تحديث للبيانات :{" "}
         {new Date(HomeData.updated).toLocaleTimeString("en-US")}
