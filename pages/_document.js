@@ -29,13 +29,13 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="ib58-3W8vdPzagl00oq0bEOp7vfn7Aq0BQTrBQxc47Y"
           />
-          <meta
+          {/* <meta
             property="og:description"
             content="تابع آخر احصاءات فيروس كرونا لحظة بلحظة"
-          />
+          /> */}
 
           {/* <meta property="og:image" content="/metaimage.PNG" /> */}
-          <meta name="twitter:image" content="/socialmediameta.png" />
+          {/* <meta name="twitter:image" content="/socialmediameta.png" /> */}
           <meta name="twitter:title" content="منصة كورونا بالعربي" />
           <meta
             name="keywords"
@@ -46,6 +46,14 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:title" content="website" />
           <meta property="twitter:domain" content="corona-ar.vercel.app" />
+
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@a7medjadan" />
+          <meta name="twitter:creator" content="@a7medjadan" />
+          <meta property="og:url" content="https://corona-ar.vercel.app/" />
+          <meta property="og:title" content="منصة كورونا بالعربي" />
+          <meta property="og:description" content="تابع آخر احصاءات فيروس كرونا لحظة بلحظة"/>
+          <meta property="og:image" content="/socialmediameta.png" />
         </Head>
         <body>
           <Main />

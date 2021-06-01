@@ -31,7 +31,7 @@ export default function MainCards({ mainData }) {
       <div className={styles.card}>
         <div className={styles.card__title}> وفيات مؤكدة </div>
         <div className={`${styles.card__value} ${styles.card__deaths}`}>
-          {!deaths ? <Skeleton duration={4} count={1} height={30}/> : deaths.toLocaleString()}
+          {deaths.toLocaleString() || <Skeleton duration={4} count={1} height={30}/>}
           
         </div>
         <div className={styles.card__new_value}>
