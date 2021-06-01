@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "../Head";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Layout.module.css';
@@ -35,12 +35,7 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
   }
   return (
     <div className={styles.container}>
-      <Head>
-        <title> {title} </title>
-        <meta property="og:title" content={title} />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      <Head/>
       <header className={styles.header}>
         <button
           aria-label="change color theme"

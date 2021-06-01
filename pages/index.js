@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "../components/Head";
 import { useState, useEffect } from "react";
 import CountryTable from "../components/countryTable/CountryTable";
 import Layout from "../components/Layout/Layout";
@@ -29,6 +29,7 @@ export default function Home({ HomeData, tableData }) {
   }, [scrollToTop]);
   return (
     <Layout cardsdata={HomeData}>
+      <Head/>
       <div className={styles.updated}>
         آخر تحديث للبيانات :{" "}
         {new Date(HomeData.updated).toLocaleTimeString("en-US")}
