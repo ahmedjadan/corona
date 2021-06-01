@@ -33,8 +33,10 @@ export default function Head({ children, title, description, keywords, url, date
           <meta property="og:type" content="website" />
           <meta property="twitter:domain" content="corona-ar.vercel.app" />
           <meta key="twitter:image" name="twitter:image" content={image} />
-      <meta property="twitter:image"  content={image} /> 
-          <meta name="twitter:card" content="summary" />
+          <meta property="twitter:image"  content={image} /> 
+            <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+            <meta key="og:image:width" property="og:image:width" content="1200" />
+            <meta key="og:image:height" property="og:image:height" content="630" />
           <meta name="twitter:site" content="@a7medjadan" />
           <meta name="twitter:creator" content="@a7medjadan" />
         </NextHead>
