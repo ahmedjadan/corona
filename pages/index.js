@@ -1,18 +1,22 @@
 import Head from "../components/Head";
 import { useState, useEffect } from "react";
+import fetcher from '../lib/fetcher'
 import CountryTable from "../components/countryTable/CountryTable";
 import Layout from "../components/Layout/Layout";
 import MainCards from "../components/MainCards/MainCards";
 import SearchInput from "../components/SearchInput/SearchInput";
-import KeyboardArrowUpSharpIcon from "@material-ui/icons/KeyboardArrowUpSharp";
 import styles from "../styles/Home.module.css";
 
-export default function Home({ HomeData, tableData }) {
+// const fetcher = url => axios.get(url).then(res => res.data)
+const URL = "https://disease.sh/v3/covid-19/all"
+
+
+export default function Home({ tableData, fallbackData, HomeData }) {
+
+  // const { data, error } = useSWR(URL, fetcher, { fallbackData, refreshInterval: 6000, })
   const [keyword, setKeyword] = useState("");
   const [scrollToTop, setScrollToTop] = useState(false);
-  const filteredCountry = tableData.filter((country) =>
-    country.country.toLowerCase().includes(keyword)
-  );
+
   const handleSearch = (e) => {
     e.preventDefault();
     setKeyword(e.target.value.toLowerCase());
@@ -27,12 +31,22 @@ export default function Home({ HomeData, tableData }) {
     };
     window.addEventListener("scroll", showScroll);
   }, [scrollToTop]);
+
+
+  // const { data: tableData, error: err } = useSWR('https://disease.sh/v3/covid-19/countries', fetcher, { refreshInterval: 1000 })
+  const filteredCountry = tableData?.filter((country) =>
+    country.country.toLowerCase().includes(keyword)
+  );
+
+  if (!HomeData) {
+    return <div>Loading....</div>
+  }
   return (
     <Layout cardsdata={HomeData}>
-      <Head image="https://corona-ar.vercel.app/socialmediameta.png" title="منصة كورونا بالعربي | تابع حالات فيروس كورونا لحظة بلحظة"/>
+      <Head image="https://corona-ar.vercel.app/socialmediameta.png" title="منصة كورونا بالعربي | تابع حالات فيروس كورونا لحظة بلحظة" />
       <div className={styles.updated}>
         آخر تحديث للبيانات :{" "}
-        {new Date(HomeData.updated).toLocaleTimeString("en-US")}
+        {new Date(HomeData?.updated).toLocaleTimeString("en-US")}
       </div>
       <div className={styles.cards}>
         <MainCards mainData={HomeData} />
@@ -48,10 +62,10 @@ export default function Home({ HomeData, tableData }) {
         className={scrollToTop ? "toTop active__scroll" : "toTop"}
         onClick={() => window.scroll(0, 0)}
       >
-        <KeyboardArrowUpSharpIcon
-          fontSize="large"
-          className="keyboard_arrow_up"
-        />
+
+        <svg xmlns="http://www.w3.org/2000/svg" className="keyboard_arrow_up" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+        </svg>
       </div>
       <CountryTable tableData={filteredCountry} />
     </Layout>
@@ -60,14 +74,16 @@ export default function Home({ HomeData, tableData }) {
 
 export const getServerSideProps = async () => {
   const res = await fetch("https://disease.sh/v3/covid-19/all");
-  const data = await fetch("https://disease.sh/v3/covid-19/countries");
   const HomeData = await res.json();
-  const tableData = await data.json();
+  const data = await fetcher(URL)
+
+  const datatable = await fetch("https://disease.sh/v3/covid-19/countries");
+  const tableData = await datatable.json();
   return {
     props: {
-      HomeData,
-      tableData,
+
+      tableData, fallbackData: data, HomeData
     },
-   
+
   };
 };

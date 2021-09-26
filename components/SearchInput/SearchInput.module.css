@@ -22,3 +22,6 @@
 .input__feild::placeholder {
     color: var(--text-color);
 }
+.search__svg {
+    color: red;
+}

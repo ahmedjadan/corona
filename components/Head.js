@@ -26,7 +26,6 @@ export default function Head({ children, title, description, keywords, url, date
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description}/>
           <meta property="og:image" content={image} />
-
           <meta property="og:image" content={image} />
           <meta property="og:url" content="https://corona-ar.vercel.app" />
           <meta property="og:url" content={`https://corona-ar.vercel.app${router.asPath}`} />

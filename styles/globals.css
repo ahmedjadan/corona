@@ -1,34 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 :root {
   --text-color: #f0f0f0;
   --text-color-secondary: #3a393d;
 
-  --primary-color: hsl(245deg, 100%, 60%);
+  --primary-color: #4f46e5;
 
   --background-color: #f9f9f9;
   --background-color-dark: #eef3f6;
   --background-color-light: #fff;
-  --font-family: "Cairo", sans-serif;
+  --font-family: 'Cairo', sans-serif;
 
   --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
   --new-cases: rgba(247, 233, 46, 0.377);
   --new-deaths: rgba(255, 0, 0, 0.219);
   --scrolTop: #3a393d;
   --scrollBtn: #f9f9f9;
+  --theme-switch: #3c3c3d;
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
   --text-color: #f0f0f0;
   --text-color-secondary: #d7dcdf;
   --new-cases: rgba(243, 212, 108, 0.61);
   --new-deaths: rgba(252, 101, 90, 0.671);
-  --primary-color: rgb(80, 55, 221);
+  --primary-color: #818cf8;
   --background-color: #282729;
   --background-color-dark: #3c393f;
   --background-color-light: #1e1c1f;
   --box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.1);
   --scrolTop: #ffffff;
   --scrollBtn: #3a393d;
+  --theme-switch: #f5cc46;
 }
 html,
 body {
