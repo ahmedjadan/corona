@@ -1,14 +1,16 @@
 import Head from "../components/Head";
+import dynamic from "next/dynamic"
 import { useState, useEffect } from "react";
 import fetcher from '../lib/fetcher'
-import CountryTable from "../components/countryTable/CountryTable";
 import Layout from "../components/Layout/Layout";
-import MainCards from "../components/MainCards/MainCards";
 import SearchInput from "../components/SearchInput/SearchInput";
 import styles from "../styles/Home.module.css";
+const CountryTable = dynamic(() => import('../components/countryTable/CountryTable'))
+const MainCards = dynamic(() => import('../components/MainCards/MainCards'))
 
 // const fetcher = url => axios.get(url).then(res => res.data)
 const URL = "https://disease.sh/v3/covid-19/all"
+
 
 
 export default function Home({ tableData, fallbackData, HomeData }) {
