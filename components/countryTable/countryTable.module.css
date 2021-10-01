@@ -8,7 +8,6 @@
   font-weight: 500;
   background-color: var(--background-color-light);
   margin-bottom: 3px;
-  border-radius: 8px;
 
   cursor: pointer;
 }
@@ -89,16 +88,14 @@
 .new__cases {
   background-color: var(--new-cases);
   width: fit-content;
-  padding: 0 15px;
-  border-radius: 7px;
+  padding: 0 10px;
   margin: 0 auto;
   text-align: center;
 }
 .new__deaths {
   background-color: var(--new-deaths);
   width: fit-content;
-  padding: 0 15px;
-  border-radius: 7px;
+  padding: 0 10px;
   margin: 0 auto;
   text-align: center;
 }
