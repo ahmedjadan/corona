@@ -12,17 +12,18 @@
   --font-family: 'Cairo', sans-serif;
 
   --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-  --new-cases: rgba(247, 233, 46, 0.377);
-  --new-deaths: rgba(255, 0, 0, 0.219);
+  --new-cases: hsla(49, 95%, 61%, 0.082);
+  --new-deaths: hsla(0, 81%, 50%, 0.116);
   --scrolTop: #3a393d;
   --scrollBtn: #f9f9f9;
   --theme-switch: #3c3c3d;
+  --new-cases-text: hsl(44, 100%, 35%);
 }
 [data-theme='dark'] {
   --text-color: #f0f0f0;
   --text-color-secondary: #d7dcdf;
-  --new-cases: rgba(243, 212, 108, 0.61);
-  --new-deaths: rgba(252, 101, 90, 0.671);
+  --new-cases: hsla(49, 95%, 61%, 0.082);
+  --new-deaths: hsla(0, 81%, 50%, 0.116);
   --primary-color: #818cf8;
   --background-color: #1E2028;
   --background-color-light: #24273167;
@@ -31,6 +32,8 @@
   --scrolTop: #ffffff;
   --scrollBtn: #3a393d;
   --theme-switch: #f5cc46;
+  --new-cases-text: hsl(44, 100%, 49%);
+
 }
 html,
 body {

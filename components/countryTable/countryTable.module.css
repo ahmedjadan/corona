@@ -91,6 +91,7 @@
   padding: 0 10px;
   margin: 0 auto;
   text-align: center;
+  color: var(--new-cases-text)
 }
 .new__deaths {
   background-color: var(--new-deaths);
@@ -98,4 +99,5 @@
   padding: 0 10px;
   margin: 0 auto;
   text-align: center;
+  color: #ea3943;
 }
