@@ -1,11 +1,9 @@
 .card {
   padding: 20px;
   background-color: var(--background-color-light);
-  border-radius: 10px;
   margin: 20px 0;
   text-align: center;
   justify-content: center;
-  box-shadow: var(--box-shadow);
   font-size: 1.4em;
 }
 .card__title {

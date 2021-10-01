@@ -4,7 +4,6 @@
   align-items: center;
   margin: 0 auto;
   text-align: center;
-  box-shadow: var(--box-shadow);
   padding: 15px;
   font-weight: 500;
   background-color: var(--background-color-light);
