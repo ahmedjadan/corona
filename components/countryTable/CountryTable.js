@@ -2,7 +2,6 @@ import styles from './countryTable.module.css';
 import Country from './Country';
 
 export default function CountryTable({ tableData }) {
-  console.log(tableData.length);
   const orderedCountry = tableData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
   return (
     <div>
@@ -15,7 +14,7 @@ export default function CountryTable({ tableData }) {
         <button className={styles.head__recovered}>تعافي</button>
       </div>
       {
-        orderedCountry.map((country) => <Country    key={country.country} country={country} tableData={tableData}/>)}
+        orderedCountry.map((country) => <Country key={country.country} country={country} tableData={tableData} />)}
     </div>
   );
 }

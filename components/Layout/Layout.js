@@ -4,8 +4,7 @@ import Link from 'next/link';
 import styles from './Layout.module.css';
 
 function Layout({ children, title = 'منصة كورونا بالعربي' }) {
-  const [theme, setTheme] = useState('light');
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState('dark');
 
 
   useEffect(() => {
@@ -15,7 +14,7 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
     );
 
     setTheme(localStorage.getItem('theme'));
-  }, []);
+  }, [theme]);
 
   const saveTheme = (theme) => {
     setTheme(theme);
@@ -24,10 +23,10 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
   };
 
   const switchTheme = () => {
-    if (theme === 'light') {
-      saveTheme('dark');
-    } else {
+    if (theme === 'dark') {
       saveTheme('light');
+    } else {
+      saveTheme('dark');
     }
   };
 

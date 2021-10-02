@@ -1,6 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 :root {
+  --font-family: 'Cairo', sans-serif;
+
+  --text-color: #f0f0f0;
+  --text-color-secondary: #d7dcdf;
+  --new-cases: hsla(49, 95%, 61%, 0.082);
+  --new-deaths: #e718181e;
+  --primary-color: #818cf8;
+  --background-color: #1E2028;
+  --background-color-light: #24273167;
+  --background-color-dark: #1E2028;
+  --box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.1);
+  --scrolTop: #ffffff;
+  --scrollBtn: #3a393d;
+  --theme-switch: #f5cc46;
+  --new-cases-text: hsl(44, 100%, 49%);
+}
+
+[data-theme='light'] {
   --text-color: #f0f0f0;
   --text-color-secondary: #3a393d;
 
@@ -18,23 +37,11 @@
   --scrollBtn: #f9f9f9;
   --theme-switch: #3c3c3d;
   --new-cases-text: hsl(44, 100%, 35%);
-}
-[data-theme='dark'] {
-  --text-color: #f0f0f0;
-  --text-color-secondary: #d7dcdf;
-  --new-cases: hsla(49, 95%, 61%, 0.082);
-  --new-deaths: hsla(0, 81%, 50%, 0.116);
-  --primary-color: #818cf8;
-  --background-color: #1E2028;
-  --background-color-light: #24273167;
-  --background-color-dark: #1E2028;
-  --box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.1);
-  --scrolTop: #ffffff;
-  --scrollBtn: #3a393d;
-  --theme-switch: #f5cc46;
-  --new-cases-text: hsl(44, 100%, 49%);
+
 
 }
+
+
 html,
 body {
   padding: 0;
