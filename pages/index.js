@@ -48,7 +48,7 @@ export default function Home({ tableData, fallbackData, HomeData }) {
       <Head image="https://corona-ar.vercel.app/socialmediameta.png" title="منصة كورونا بالعربي | تابع حالات فيروس كورونا لحظة بلحظة" />
       <div className={styles.updated}>
         آخر تحديث للبيانات :{" "}
-        {new Date(HomeData?.updated).toLocaleTimeString("en-US")}
+        {new Date(HomeData?.updated).toLocaleString("en-US")}
       </div>
       <div className={styles.cards}>
         <MainCards mainData={HomeData} />
@@ -57,7 +57,7 @@ export default function Home({ tableData, fallbackData, HomeData }) {
         <SearchInput
           placeholder="ابحث باسم الدولة ...."
           onChange={handleSearch}
-          type="text"
+          type="search"
         />
       </div>
       <div
