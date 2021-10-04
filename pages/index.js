@@ -57,7 +57,7 @@ export default function Home({ tableData, fallbackData, HomeData }) {
         <SearchInput
           placeholder="ابحث باسم الدولة ...."
           onChange={handleSearch}
-          type="search"
+          type="text"
         />
       </div>
       <div
