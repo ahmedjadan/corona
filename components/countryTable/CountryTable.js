@@ -10,7 +10,7 @@ export default function CountryTable({ tableData }) {
         <button className={styles.head__cases}>اجمالي الحالات</button>
         <button className={styles.head__new}>حالات جديدة</button>
         <button className={styles.head__deaths}>وفيات</button>
-        <button className={styles.head__active}>وفيات جديدة</button>
+        <button className={styles.head__new__deaths}>وفيات جديدة</button>
         <button className={styles.head__recovered}>تعافي</button>
       </div>
       {

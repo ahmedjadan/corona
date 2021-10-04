@@ -24,11 +24,11 @@
   cursor: pointer;
   margin: 0;
 }
-.head__active,
-.head__cases,
-.head__deaths,
 .head__name,
+.head__new__deaths,
+.head__cases,
 .head__new,
+.head__deaths,
 .head__recovered {
   padding: 20px;
   font-weight: 700;
@@ -52,12 +52,13 @@
 .head__deaths {
   flex: 1;
 }
-.head__active {
+.head__newDeaths {
   flex: 1;
 }
 .head__recovered {
   flex: 1;
 }
+
 .country__name {
   flex: 1;
 }
@@ -67,7 +68,7 @@
 .country__deaths {
   flex: 1;
 }
-.country__active {
+.country__today__deaths {
   flex: 1;
 }
 .country__recovered {
@@ -76,22 +77,14 @@
 .country__new {
   flex: 1;
 }
-@media screen and (max-width: 720px) {
-  .country__new,
-  .country__active,
-  .head__active,
-  .head__new {
-    display: none;
-    font-size: 14px;
-  }
-}
+
 .new__cases {
   background-color: var(--new-cases);
   width: fit-content;
   padding: 0 10px;
   margin: 0 auto;
   text-align: center;
-  color: var(--new-cases-text)
+  color: var(--new-cases-text);
 }
 .new__deaths {
   background-color: var(--new-deaths);
@@ -100,4 +93,32 @@
   margin: 0 auto;
   text-align: center;
   color: #ea3943;
+}
+
+@media screen and (max-width: 720px) {
+  .country__recovered,
+  .head__recovered,
+  .country__deaths,
+  .head__deaths {
+    display: none;
+    font-size: 14px;
+  }
+  .new__cases,
+  .new__deaths {
+    padding: 0 2px;
+  }
+  .head__cases,
+  .head__name,
+  .head__new__deaths,
+  .head__new {
+    padding: 5px;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  .country__active,
+  .country__cases,
+  .country__name,
+  .country__new {
+    font-size: 16px;
+  }
 }

@@ -44,9 +44,9 @@ const Country = ({ country, tableData }) => !country ? (
               'M'
             : country.deaths.toLocaleString()}
         </div>
-        <div className={styles.country__active}>
+        <div className={styles.country__today__deaths}>
           <div
-            className={`${styles.country__active}  ${
+            className={`${styles.country__today__deaths}  ${
               country.todayDeaths ? styles.new__deaths : ''
             } `}
           >
