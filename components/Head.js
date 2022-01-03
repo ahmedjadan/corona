@@ -22,6 +22,7 @@ export default function Head({ children, title, description, keywords, url, date
             content="كورونا، كوفيد19، فيروس كورونا التاجي، حالات كورونا في العالم العربي ، حالات كورونا في اليمن، السعودية، مصر، الامارات، قطر، البحرين، الكويت، السودان، العراق، سوريا، فلسطين، المغرب العربي، موريتانيا، ليبيا"
           />
           <link rel="canonical" href={`https://corona-ar.vercel.app${router.asPath}`} />
+          <link rel="manifest" href="/manifest.json" />
           <meta key="image" property="image" content="https://corona-ar.vercel.app/socialmediameta.png" />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description}/>
