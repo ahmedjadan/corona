@@ -22,6 +22,9 @@ class MyDocument extends Document {
           `,
             }}
           />
+          <link rel="manifest" href="manifest.json" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+
         </Head>
         <body>
           <Main />
