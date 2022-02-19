@@ -1,11 +1,9 @@
-import Head from '../Head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Layout.module.css';
 
 function Layout({ children, title = 'منصة كورونا بالعربي' }) {
   const [theme, setTheme] = useState('dark');
-
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -29,7 +27,7 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
       saveTheme('dark');
     }
   };
-
+  //const switchTheme = (theme) => saveTheme(!theme)
 
   function refreshPage() {
     //window.location.reload(false);
@@ -38,13 +36,13 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <button style={{ outline: 'none' }}
+        <button
+          style={{ outline: 'none' }}
           aria-label="Toggle Dark Mode"
           type="button"
           className={styles.theme__swicher}
           onClick={switchTheme}
         >
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -68,7 +66,6 @@ function Layout({ children, title = 'منصة كورونا بالعربي' }) {
               />
             )}
           </svg>
-
         </button>
         <Link href="/">
           <a onClick={refreshPage}>
