@@ -1,18 +1,12 @@
-import Skeleton from 'react-loading-skeleton';
 import Link from 'next/link';
 import styles from './countryTable.module.css';
 
-
-const Country = ({ country, tableData }) => !country ? (
-
-<Skeleton count={tableData.length} height={40} duration={2} />
-) : (
-
-<Link
+const Country = ({ country }) => {
+  return (
+    <Link
       href={`/country/${country.country
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')}`}
-   
     >
       <div className={styles.country__row}>
         <div className={styles.country__name}> {country.country} </div>
@@ -62,12 +56,10 @@ const Country = ({ country, tableData }) => !country ? (
         </div>
       </div>
     </Link>
-)
-    
-    
- 
-  
+  );
+};
+
 export default Country;
 
 /*
-*/
+ */

@@ -13,8 +13,9 @@ export default function CountryTable({ tableData }) {
         <button className={styles.head__new__deaths}>وفيات جديدة</button>
         <button className={styles.head__recovered}>تعافي</button>
       </div>
-      {
-        orderedCountry.map((country) => <Country key={country.country} country={country} tableData={tableData} />)}
+      {orderedCountry.map((country) => (
+        <Country key={country.country} country={country} />
+      ))}
     </div>
   );
 }

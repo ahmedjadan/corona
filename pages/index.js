@@ -1,24 +1,18 @@
-import Head from "../components/Head";
-import dynamic from "next/dynamic"
-import { useState, useEffect } from "react";
-import fetcher from '../lib/fetcher'
-import Layout from "../components/Layout/Layout";
-import SearchInput from "../components/SearchInput/SearchInput";
-import styles from "../styles/Home.module.css";
-const CountryTable = dynamic(() => import('../components/countryTable/CountryTable'))
-const MainCards = dynamic(() => import('../components/MainCards/MainCards'))
+import Head from '../components/Head';
+import dynamic from 'next/dynamic';
+import { useState, useEffect } from 'react';
+import Layout from '../components/Layout/Layout';
+import SearchInput from '../components/SearchInput/SearchInput';
+import styles from '../styles/Home.module.css';
+const CountryTable = dynamic(() =>
+  import('../components/countryTable/CountryTable')
+);
+const MainCards = dynamic(() => import('../components/MainCards/MainCards'));
 
-// const fetcher = url => axios.get(url).then(res => res.data)
-const URL = "https://disease.sh/v3/covid-19/all"
-
-
-
-export default function Home({ tableData, fallbackData, HomeData }) {
-
-  // const { data, error } = useSWR(URL, fetcher, { fallbackData, refreshInterval: 6000, })
-  const [keyword, setKeyword] = useState("");
+export default function Home({ tableData, HomeData }) {
+  const [keyword, setKeyword] = useState('');
   const [scrollToTop, setScrollToTop] = useState(false);
-
+  const [allCountries, setAllCountries] = useState(tableData);
   const handleSearch = (e) => {
     e.preventDefault();
     setKeyword(e.target.value.toLowerCase());
@@ -31,24 +25,25 @@ export default function Home({ tableData, fallbackData, HomeData }) {
         setScrollToTop(false);
       }
     };
-    window.addEventListener("scroll", showScroll);
+    window.addEventListener('scroll', showScroll);
   }, [scrollToTop]);
 
-
-  // const { data: tableData, error: err } = useSWR('https://disease.sh/v3/covid-19/countries', fetcher, { refreshInterval: 1000 })
   const filteredCountry = tableData?.filter((country) =>
     country.country.toLowerCase().includes(keyword)
   );
 
   if (!HomeData) {
-    return <div>Loading....</div>
+    return <div>Loading....</div>;
   }
   return (
     <Layout cardsdata={HomeData}>
-      <Head image="https://corona-ar.vercel.app/socialmediameta.png" title="منصة كورونا بالعربي | تابع حالات فيروس كورونا لحظة بلحظة" />
+      <Head
+        image="https://corona-ar.vercel.app/socialmediameta.png"
+        title="منصة كورونا بالعربي | تابع حالات فيروس كورونا لحظة بلحظة"
+      />
       <div className={styles.updated}>
-        آخر تحديث للبيانات :{" "}
-        {new Date(HomeData?.updated).toLocaleString("en-US")}
+        آخر تحديث للبيانات :{' '}
+        {new Date(HomeData?.updated).toLocaleString('en-US')}
       </div>
       <div className={styles.cards}>
         <MainCards mainData={HomeData} />
@@ -61,12 +56,20 @@ export default function Home({ tableData, fallbackData, HomeData }) {
         />
       </div>
       <div
-        className={scrollToTop ? "toTop active__scroll" : "toTop"}
+        className={scrollToTop ? 'toTop active__scroll' : 'toTop'}
         onClick={() => window.scroll(0, 0)}
       >
-
-        <svg xmlns="http://www.w3.org/2000/svg" className="keyboard_arrow_up" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="keyboard_arrow_up"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clipRule="evenodd"
+          />
         </svg>
       </div>
       <CountryTable tableData={filteredCountry} />
@@ -74,18 +77,17 @@ export default function Home({ tableData, fallbackData, HomeData }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const res = await fetch("https://disease.sh/v3/covid-19/all");
+export const getStaticProps = async () => {
+  const [res, datatable] = await Promise.all([
+    fetch('https://disease.sh/v3/covid-19/all'),
+    fetch('https://disease.sh/v3/covid-19/countries'),
+  ]);
   const HomeData = await res.json();
-  const data = await fetcher(URL)
-
-  const datatable = await fetch("https://disease.sh/v3/covid-19/countries");
   const tableData = await datatable.json();
   return {
     props: {
-
-      tableData, fallbackData: data, HomeData
+      tableData,
+      HomeData,
     },
-
   };
 };

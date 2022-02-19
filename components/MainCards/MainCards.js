@@ -25,10 +25,10 @@ export default function MainCards({ mainData }) {
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M18 15l-6 -6l-6 6h12" />
           </svg>
-          {Math.abs(todayCases) > 999
-            ? Math.sign(todayCases) * (Math.abs(todayCases) / 1000).toFixed(1) +
-            "k"
-            : Math.sign(todayCases) * Math.abs(todayCases)}
+          {Math.abs(todayCases) > 999999
+            ? Math.sign(todayCases) * (Math.abs(todayCases) / 1000000).toFixed(2) +
+            "M"
+            : Math.sign(todayCases) * (Math.abs(todayCases) /1000).toFixed(1)  }
         </div>
       </div>
       <div className={styles.card}>
