@@ -16,6 +16,7 @@
   display: flex;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 .table__head button {
   border: none;

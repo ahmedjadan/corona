@@ -1,5 +1,6 @@
 import Head from '../components/Head';
 import dynamic from 'next/dynamic';
+
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import SearchInput from '../components/SearchInput/SearchInput';
@@ -72,6 +73,7 @@ export default function Home({ tableData, HomeData }) {
           />
         </svg>
       </div>
+     
       <CountryTable tableData={filteredCountry} />
     </Layout>
   );
