@@ -1,7 +1,8 @@
 import Head from '../components/Head';
 import dynamic from 'next/dynamic';
+import { FixedSizeList } from 'react-window';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Layout from '../components/Layout/Layout';
 import SearchInput from '../components/SearchInput/SearchInput';
 import styles from '../styles/Home.module.css';
@@ -32,6 +33,15 @@ export default function Home({ tableData, HomeData }) {
     country.country.toLowerCase().includes(keyword)
   );
 
+  const width = '100%';
+
+  const Row = useCallback(({ index, style }) => {
+    return (
+      <div style={{ width: '100%' }} key={index}>
+        <CountryTable tableData={filteredCountry} />
+      </div>
+    );
+  }, []);
   if (!HomeData) {
     return <div>Loading....</div>;
   }
@@ -72,8 +82,14 @@ export default function Home({ tableData, HomeData }) {
           />
         </svg>
       </div>
-
-      <CountryTable tableData={filteredCountry} />
+      <FixedSizeList
+        height={600}
+        width={width}
+        itemSize={67}
+        itemCount={tableData.length}
+      >
+        {Row}
+      </FixedSizeList>
     </Layout>
   );
 }
