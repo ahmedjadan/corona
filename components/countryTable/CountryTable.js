@@ -1,19 +1,8 @@
 import styles from './countryTable.module.css';
 import { useRef } from 'react';
 import Country from './Country';
-import {
-  List,
-  AutoSizer,
-  CellMeasurer,
-  CellMeasurerCache,
-} from 'react-virtualized';
+import { List, AutoSizer } from 'react-virtualized';
 export default function CountryTable({ tableData }) {
-  const cache = useRef(
-    new CellMeasurerCache({
-      fixedWidth: true,
-      defaultHeight: 100,
-    })
-  );
   const orderedCountry = tableData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
   return (
     <div>
@@ -32,24 +21,15 @@ export default function CountryTable({ tableData }) {
             <List
               width={width}
               height={height}
-              rowHeight={cache.current.rowHeight}
-              deferredMeasurementCache={cache.current}
+              rowHeight={100}
               rowCount={tableData.length}
               rowRenderer={({ key, index, style, parent }) => {
                 return (
-                  <CellMeasurer
-                    key={key}
-                    cache={cache.current}
-                    parent={parent}
-                    columnIndex={0}
-                    rowIndex={index}
-                  >
-                    <div>
-                      {orderedCountry.map((country) => (
-                        <Country key={country.country} country={country} />
-                      ))}
-                    </div>
-                  </CellMeasurer>
+                  <div key={key}>
+                    {orderedCountry.map((country) => (
+                      <Country key={country.country} country={country} />
+                    ))}
+                  </div>
                 );
               }}
             />

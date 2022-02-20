@@ -13,7 +13,6 @@ const MainCards = dynamic(() => import('../components/MainCards/MainCards'));
 export default function Home({ tableData, HomeData }) {
   const [keyword, setKeyword] = useState('');
   const [scrollToTop, setScrollToTop] = useState(false);
-  const [allCountries, setAllCountries] = useState(tableData);
   const handleSearch = (e) => {
     e.preventDefault();
     setKeyword(e.target.value.toLowerCase());
@@ -73,7 +72,7 @@ export default function Home({ tableData, HomeData }) {
           />
         </svg>
       </div>
-     
+
       <CountryTable tableData={filteredCountry} />
     </Layout>
   );
