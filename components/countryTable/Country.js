@@ -9,28 +9,14 @@ const Country = ({ country }) => {
         .replace(/[\u0300-\u036f]/g, '')}`}
     >
       <div className={styles.country__row}>
-        <div className={styles.country__recovered}>
-          {Math.abs(country.recovered) > 999999
-            ? Math.sign(country.recovered) *
-                (Math.abs(country.recovered) / 1000000).toFixed(2) +
+        <div className={styles.country__name}> {country.country} </div>
+        <div className={styles.country__cases}>
+          {' '}
+          {Math.abs(country.cases) > 999999
+            ? Math.sign(country.cases) *
+                (Math.abs(country.cases) / 1000000).toFixed(3) +
               'M'
-            : country.recovered.toLocaleString()}
-        </div>
-        <div className={styles.country__today__deaths}>
-          <div
-            className={`${styles.country__today__deaths}  ${
-              country.todayDeaths ? styles.new__deaths : ''
-            } `}
-          >
-            {country.todayDeaths.toLocaleString()}{' '}
-          </div>
-        </div>
-        <div className={styles.country__deaths}>
-          {Math.abs(country.deaths) > 999999
-            ? Math.sign(country.deaths) *
-                (Math.abs(country.deaths) / 1000000).toFixed(3) +
-              'M'
-            : country.deaths.toLocaleString()}
+            : country.cases.toLocaleString()}
         </div>
         <div className={styles.country__new}>
           <div
@@ -45,15 +31,29 @@ const Country = ({ country }) => {
               : country.todayCases.toLocaleString()}
           </div>
         </div>
-        <div className={styles.country__cases}>
-          {' '}
-          {Math.abs(country.cases) > 999999
-            ? Math.sign(country.cases) *
-                (Math.abs(country.cases) / 1000000).toFixed(3) +
+        <div className={styles.country__deaths}>
+          {Math.abs(country.deaths) > 999999
+            ? Math.sign(country.deaths) *
+                (Math.abs(country.deaths) / 1000000).toFixed(3) +
               'M'
-            : country.cases.toLocaleString()}
+            : country.deaths.toLocaleString()}
         </div>
-        <div className={styles.country__name}> {country.country} </div>
+        <div className={styles.country__today__deaths}>
+          <div
+            className={`${styles.country__today__deaths}  ${
+              country.todayDeaths ? styles.new__deaths : ''
+            } `}
+          >
+            {country.todayDeaths.toLocaleString()}{' '}
+          </div>
+        </div>
+        <div className={styles.country__recovered}>
+          {Math.abs(country.recovered) > 999999
+            ? Math.sign(country.recovered) *
+                (Math.abs(country.recovered) / 1000000).toFixed(2) +
+              'M'
+            : country.recovered.toLocaleString()}
+        </div>
       </div>
     </Link>
   );
