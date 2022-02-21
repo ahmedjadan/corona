@@ -28,19 +28,11 @@ export default function Home({ tableData, HomeData }) {
     };
     window.addEventListener('scroll', showScroll);
   }, [scrollToTop]);
+  const orderedCountry = tableData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
 
-  const filteredCountry = tableData?.filter((country) =>
+  const filteredCountry = orderedCountry?.filter((country) =>
     country.country.toLowerCase().includes(keyword)
   );
-
-  const width = '100%';
-  // const Row = ({ index, style }) => {
-  //   return (
-  //     <div style={{ width: '100%' }} key={index}>
-  //       <CountryTable tableData={filteredCountry} />
-  //     </div>
-  //   );
-  // };
 
   if (!HomeData) {
     return <div>Loading....</div>;
@@ -83,9 +75,6 @@ export default function Home({ tableData, HomeData }) {
         </svg>
       </div>
       <CountryTable tableData={filteredCountry} />
-      {/* <FixedSizeList height={600} width={width} itemSize={67} itemCount={1}>
-        {Row}
-      </FixedSizeList> */}
     </Layout>
   );
 }

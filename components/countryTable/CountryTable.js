@@ -1,29 +1,33 @@
 import styles from './countryTable.module.css';
-import { useCallback } from 'react';
+import { useCallback, useState, memo } from 'react';
 import Country from './Country';
-import { FixedSizeList } from 'react-window';
+import { FixedSizeList, areEqual } from 'react-window';
+import SearchInput from '../SearchInput/SearchInput';
 
 export default function CountryTable({ tableData }) {
   const width = '100%';
-  const orderedCountry = tableData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
-  const Row = useCallback(({ index, style }) => {
-    const { country, todayDeaths, recovered, deaths, todayCases, cases } =
-      orderedCountry[index];
 
-    return (
-      <div style={style}>
-        <Country
-          country={country}
-          cases={cases}
-          recovered={recovered}
-          todayCases={todayCases}
-          deaths={deaths}
-          todayDeaths={todayDeaths}
-          key={country}
-        />
-      </div>
-    );
-  }, []);
+  const Row = memo(
+    ({ index, style }) => {
+      const { country, todayDeaths, recovered, deaths, todayCases, cases } =
+        tableData[index] || {};
+      return (
+        <div style={style}>
+          <Country
+            country={country}
+            cases={cases}
+            recovered={recovered}
+            todayCases={todayCases}
+            deaths={deaths}
+            todayDeaths={todayDeaths}
+            key={country}
+          />
+        </div>
+      );
+    },
+
+    areEqual
+  );
 
   return (
     <>
@@ -41,7 +45,7 @@ export default function CountryTable({ tableData }) {
           height={600}
           width={width}
           itemSize={67}
-          itemCount={orderedCountry.length}
+          itemCount={tableData.length}
         >
           {Row}
         </FixedSizeList>
