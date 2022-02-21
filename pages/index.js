@@ -34,14 +34,14 @@ export default function Home({ tableData, HomeData }) {
   );
 
   const width = '100%';
+  // const Row = ({ index, style }) => {
+  //   return (
+  //     <div style={{ width: '100%' }} key={index}>
+  //       <CountryTable tableData={filteredCountry} />
+  //     </div>
+  //   );
+  // };
 
-  const Row = useCallback(({ index, style }) => {
-    return (
-      <div style={{ width: '100%' }} key={index}>
-        <CountryTable tableData={filteredCountry} />
-      </div>
-    );
-  }, []);
   if (!HomeData) {
     return <div>Loading....</div>;
   }
@@ -82,14 +82,10 @@ export default function Home({ tableData, HomeData }) {
           />
         </svg>
       </div>
-      <FixedSizeList
-        height={600}
-        width={width}
-        itemSize={67}
-        itemCount={tableData.length}
-      >
+      <CountryTable tableData={filteredCountry} />
+      {/* <FixedSizeList height={600} width={width} itemSize={67} itemCount={1}>
         {Row}
-      </FixedSizeList>
+      </FixedSizeList> */}
     </Layout>
   );
 }
