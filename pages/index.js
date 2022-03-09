@@ -91,5 +91,6 @@ export const getStaticProps = async () => {
       tableData,
       HomeData,
     },
+    revalidate: 1,
   };
 };
